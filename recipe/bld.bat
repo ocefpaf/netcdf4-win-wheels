@@ -21,5 +21,5 @@ mkdir %RECIPE_DIR%\..\build_artifacts\pypi_wheels
 
 for %%f in (dist\*.whl) do (
   cp %%f %RECIPE_DIR%\..\build_artifacts\pypi_wheels\
-  %PYTHON% -m pip install %%f
+  cp %%f %PREFIX%\
 )
