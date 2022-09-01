@@ -16,7 +16,7 @@ def add_library(lib_paths, dist_path="dist"):
         fname = os.path.abspath(fname)
         with wheeltools.InWheel(fname, fname):
             for lib_path in lib_paths:
-                shutil.copy2(lib_path, pjoin("netcdf4", "lib"))
+                shutil.copy2(lib_path, pjoin("netCDF4"))
 
 
 def main():

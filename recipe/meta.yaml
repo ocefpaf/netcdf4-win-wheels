@@ -32,6 +32,7 @@ requirements:
     - hdf5
     - libnetcdf
     - zlib
+    - delocate  # [win]
   run:
     - python
     - setuptools
