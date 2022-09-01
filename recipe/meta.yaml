@@ -11,10 +11,6 @@ source:
 build:
   skip: true  # [not (win and vc>=14)]
   number: 0
-  entry_points:
-    - ncinfo = netCDF4.utils:ncinfo
-    - nc4tonc3 = netCDF4.utils:nc4tonc3
-    - nc3tonc4 = netCDF4.utils:nc3tonc4
   ignore_run_exports_from:
     - zlib
     - hdf5
