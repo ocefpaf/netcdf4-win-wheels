@@ -8,7 +8,7 @@ echo HDF5_incdir = %LIBRARY_INC% >> %SITECFG%
 echo netCDF4_libdir = %LIBRARY_LIB% >> %SITECFG%
 echo netCDF4_incdir = %LIBRARY_INC% >> %SITECFG%
 
-%PYTHON% setup.py bdist_wheel
+%PYTHON% -m pip wheel . --dest-dir=dist --no-deps --no-build-isolation
 if errorlevel 1 exit 1
 
 REM set dep_dir=%LIBRARY_BIN%
