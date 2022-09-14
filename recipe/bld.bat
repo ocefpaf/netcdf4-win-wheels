@@ -14,7 +14,8 @@ if errorlevel 1 exit 1
 mkdir %RECIPE_DIR%\..\build_artifacts
 mkdir %RECIPE_DIR%\..\build_artifacts\pypi_wheels
 
-for %%f in (dist\*.whl) do (
+cd dist
+for %%f in (*.whl) do (
   delvewheel repair -w %RECIPE_DIR%\..\build_artifacts\pypi_wheels\ %%f
   cp %RECIPE_DIR%\..\build_artifacts\pypi_wheels\%%f %PREFIX%\
 )
