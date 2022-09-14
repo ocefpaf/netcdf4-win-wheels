@@ -33,7 +33,6 @@ requirements:
     - hdf5
     - libnetcdf
     - zlib
-    # - delocate  # [win]
     - delvewheel  # [win]
   run:
     - python
