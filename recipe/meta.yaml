@@ -38,6 +38,8 @@ requirements:
     - python
 
 test:
+  source_files:
+    - test
   requires:
     - pip
 
