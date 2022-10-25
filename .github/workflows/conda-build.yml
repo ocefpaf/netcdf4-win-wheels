@@ -8,18 +8,18 @@ on: [push, pull_request]
 jobs:
   build:
     name: ${{ matrix.CONFIG }}
-    runs-on: windows-2019
+    runs-on: ${{ matrix.os }}-latest
     strategy:
       fail-fast: false
       matrix:
         include:
-          - CONFIG: win_64_numpy1.19python3.7.____cpython
+          - CONFIG: win_64_numpy1.20python3.7.____cpython
             UPLOAD_PACKAGES: True
             os: windows
-          - CONFIG: win_64_numpy1.19python3.8.____cpython
+          - CONFIG: win_64_numpy1.20python3.8.____cpython
             UPLOAD_PACKAGES: True
             os: windows
-          - CONFIG: win_64_numpy1.19python3.9.____cpython
+          - CONFIG: win_64_numpy1.20python3.9.____cpython
             UPLOAD_PACKAGES: True
             os: windows
           - CONFIG: win_64_numpy1.21python3.10.____cpython
