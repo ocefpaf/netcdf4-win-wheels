@@ -8,18 +8,15 @@ on: [push, pull_request]
 jobs:
   build:
     name: ${{ matrix.CONFIG }}
-    runs-on: windows-2019
+    runs-on: ${{ matrix.os }}-latest
     strategy:
       fail-fast: false
       matrix:
         include:
-          - CONFIG: win_64_numpy1.19python3.7.____cpython
+          - CONFIG: win_64_numpy1.20python3.8.____cpython
             UPLOAD_PACKAGES: True
             os: windows
-          - CONFIG: win_64_numpy1.19python3.8.____cpython
-            UPLOAD_PACKAGES: True
-            os: windows
-          - CONFIG: win_64_numpy1.19python3.9.____cpython
+          - CONFIG: win_64_numpy1.20python3.9.____cpython
             UPLOAD_PACKAGES: True
             os: windows
           - CONFIG: win_64_numpy1.21python3.10.____cpython
@@ -27,7 +24,7 @@ jobs:
             os: windows
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Build on Linux
       if: matrix.os == 'ubuntu'
@@ -79,7 +76,7 @@ jobs:
       shell: cmd
       run: |
         call activate base
-        mamba.exe install -c conda-forge 'python=3.9' conda-build conda pip boa conda-forge-ci-setup=3
+        mamba.exe install -c conda-forge 'python=3.9' conda-build conda pip boa conda-forge-ci-setup=3 "py-lief<0.12"
         if errorlevel 1 exit 1
         setup_conda_rc .\ ".\recipe" .\.ci_support\%CONFIG%.yaml
         if errorlevel 1 exit 1

@@ -7,6 +7,8 @@ package:
 source:
   url: https://github.com/Unidata/netcdf4-python/archive/refs/heads/v{{ version }}rel.tar.gz
   sha256: bc437e43325f54e6e679cd595f97611b39a02f5aaeb86e41fb63ca20220f5f4f
+  patches:
+    - release_file.patch
 
 build:
   skip: true  # [not (win and vc>=14)]
@@ -33,11 +35,13 @@ requirements:
     - hdf5
     - libnetcdf
     - zlib
-    - delocate  # [win]
+    - delvewheel  # [win]
   run:
     - python
 
 test:
+  source_files:
+    - test
   requires:
     - pip
 
