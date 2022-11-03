@@ -22,6 +22,9 @@ jobs:
           - CONFIG: win_64_numpy1.21python3.10.____cpython
             UPLOAD_PACKAGES: True
             os: windows
+          - CONFIG: win_64_numpy1.23python3.11.____cpython
+            UPLOAD_PACKAGES: True
+            os: windows
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
