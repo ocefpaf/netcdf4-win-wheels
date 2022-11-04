@@ -32,6 +32,8 @@ requirements:
     - hdf5
     - libnetcdf
     - zlib
+    # make wheel deps
+    - auditwheel  # [linux]
     - delvewheel  # [win]
   run:
     - python
