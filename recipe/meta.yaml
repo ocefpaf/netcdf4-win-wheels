@@ -1,11 +1,13 @@
-{% set version = "1.6.2" %}
+{% set version = "1.6.3" %}
+{% set = commit = "a027a5feaa4f8f10934279548f16bba5df16eee1" %}
 
 package:
   name: netcdf4
   version: {{ version }}
 
 source:
-  url: https://github.com/Unidata/netcdf4-python/archive/refs/heads/v{{ version }}rel.tar.gz
+  # url: https://github.com/Unidata/netcdf4-python/archive/refs/heads/v{{ version }}rel.tar.gz
+  url: https://github.com/Unidata/netcdf4-python/archive/{{ commit }}.tar.gz
   sha256: f216defd771a6bc143d99d060793813b7e29d6907455127301ab8983592b780c
 
 build:
