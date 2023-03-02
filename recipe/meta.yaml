@@ -5,9 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  # url: https://github.com/Unidata/netcdf4-python/archive/refs/heads/v{{ version }}rel.tar.gz
   url: https://github.com/Unidata/netcdf4-python/archive/refs/heads/v{{ version }}rel.zip
-  sha256: f216defd771a6bc143d99d060793813b7e29d6907455127301ab8983592b780c
+  sha256: c837d376c08878a528386eecb9fbb28aeb8c81f7614a5a16e3c5c046e1ed8fca
 
 build:
   skip: true  # [not (win and vc>=14)]
