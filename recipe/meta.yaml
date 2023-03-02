@@ -1,20 +1,20 @@
-{% set version = "1.6.2" %}
+{% set version = "1.6.3" %}
 
 package:
   name: netcdf4
   version: {{ version }}
 
 source:
-  url: https://github.com/Unidata/netcdf4-python/archive/refs/heads/v{{ version }}rel.tar.gz
-  sha256: f216defd771a6bc143d99d060793813b7e29d6907455127301ab8983592b780c
+  url: https://github.com/Unidata/netcdf4-python/archive/refs/heads/v{{ version }}rel.zip
+  sha256: c837d376c08878a528386eecb9fbb28aeb8c81f7614a5a16e3c5c046e1ed8fca
 
 build:
   skip: true  # [not (win and vc>=14)]
   number: 0
   ignore_run_exports_from:
     - zlib
-    - hdf5
-    - libnetcdf
+    - hdf5 1.12.2
+    - libnetcdf 4.9.1
     - numpy
 
 requirements:
@@ -30,8 +30,8 @@ requirements:
     - numpy
     - cython >=0.19
     - cftime >=1.0.1
-    - hdf5
-    - libnetcdf
+    - hdf5 1.12.2
+    - libnetcdf 4.9.1
     - zlib
     - delvewheel  # [win]
   run:
