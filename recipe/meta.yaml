@@ -1,4 +1,4 @@
-{% set version = "1.6.3" %}
+{% set version = "1.6.4" %}
 
 package:
   name: netcdf4
@@ -14,7 +14,7 @@ build:
   ignore_run_exports_from:
     - zlib
     - hdf5 1.12.2
-    - libnetcdf 4.9.1
+    - libnetcdf 4.9.2
     - numpy
 
 requirements:
