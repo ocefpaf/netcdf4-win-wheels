@@ -13,7 +13,7 @@ build:
   number: 0
   ignore_run_exports_from:
     - zlib
-    - hdf5 1.12.2
+    - hdf5 1.14.0
     - libnetcdf 4.9.2
     - numpy
 
@@ -30,7 +30,7 @@ requirements:
     - numpy
     - cython >=0.19
     - cftime >=1.0.1
-    - hdf5 1.12.2
+    - hdf5 1.14.0
     - libnetcdf 4.9.2
     - zlib
     - delvewheel  # [win]
