@@ -31,7 +31,7 @@ requirements:
     - cython >=0.19
     - cftime >=1.0.1
     - hdf5 1.12.2
-    - libnetcdf 4.9.1
+    - libnetcdf 4.9.2
     - zlib
     - delvewheel  # [win]
   run:
