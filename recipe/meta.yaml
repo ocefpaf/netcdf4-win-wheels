@@ -1,12 +1,12 @@
-{% set version = "1.6.3" %}
+{% set version = "1.6.4" %}
 
 package:
   name: netcdf4
   version: {{ version }}
 
 source:
-  url: https://github.com/Unidata/netcdf4-python/archive/refs/heads/v{{ version }}rel.zip
-  sha256: c837d376c08878a528386eecb9fbb28aeb8c81f7614a5a16e3c5c046e1ed8fca
+  url: https://github.com/Unidata/netcdf4-python/archive/refs/tags/v{{ version }}rel.tar.gz
+  sha256: aa14181683e8b661e5df1fdab13fa71a62d27b1eb6fb9d8c24995820c5edabe9
 
 build:
   skip: true  # [not (win and vc>=14)]
