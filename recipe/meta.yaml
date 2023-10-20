@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/Unidata/netcdf4-python/archive/refs/tags/v{{ version }}rel.zip
-  sha256: 45e52ec725d75faedd9d346f9a13bb28c85ecc845a3de2c9fd35713dc6189fbb
+  url: https://github.com/Unidata/netcdf4-python/archive/refs/tags/v{{ version }}rel.tar.gz
+  sha256: aa14181683e8b661e5df1fdab13fa71a62d27b1eb6fb9d8c24995820c5edabe9
 
 build:
   skip: true  # [not (win and vc>=14)]
@@ -21,7 +21,7 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
+    - cython >=0.29.20,<3                    # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
   host:

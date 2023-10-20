@@ -17,5 +17,5 @@ mkdir %RECIPE_DIR%\..\build_artifacts\pypi_wheels
 cd dist
 for %%f in (*.whl) do (
   delvewheel repair -w %RECIPE_DIR%\..\build_artifacts\pypi_wheels\ %%f
-  cp %RECIPE_DIR%\..\build_artifacts\pypi_wheels\%%f %PREFIX%\
+  copy %RECIPE_DIR%\..\build_artifacts\pypi_wheels\%%f %PREFIX%\
 )
