@@ -9,7 +9,6 @@ source:
   sha256: c2777b880ce7c460b5ec017e1bb4bfbe97609fab9e89641d4762507e6f8ab2b9
 
 build:
-  skip: true  # [not (win and vc>=14)]
   number: 0
   ignore_run_exports_from:
     - zlib
@@ -33,6 +32,8 @@ requirements:
     - hdf5 1.14.0
     - libnetcdf 4.9.2
     - zlib
+    # make wheel deps
+    - auditwheel  # [linux]
     - delvewheel  # [win]
   run:
     - python
